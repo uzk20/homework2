@@ -42,7 +42,7 @@ def draw_arrow(surface, row, col, direction, color=BLUE, offset_y=0):
     ]
     # 旋转
     angle = DIRECTION_ANGLE[direction]
-    rad = -angle * 3.14159 / 180
+    rad = angle * 3.14159 / 180
     cos_a, sin_a = __import__("math").cos(rad), __import__("math").sin(rad)
     rotated = []
     for (x, y) in points:
