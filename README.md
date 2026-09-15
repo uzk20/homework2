@@ -75,7 +75,7 @@ homework2/
 
 ### 开始界面
 
-![开始界面](screenshots/start.png)
+![开始界面](screenshots/开始界面.png)
 
 ### 游戏进行中
 
