@@ -18,24 +18,23 @@ def parse_level(level_str_tuple):
                 arrows[(r, c)] = ch
     return arrows
 
-def can_fly(arrows, row, col):
+def can_fly(arrows, row, col, rows, cols):
     """
     判断 (row, col) 处的箭头能否飞出棋盘。
-    规则：沿箭头方向，从下一格开始逐格前进，直到出界。
-          途中遇到任何其他箭头 → 不能飞。
+    rows, cols 是棋盘的尺寸，用于边界判断。
     """
     direction = arrows[(row, col)]
     dr, dc = DIRECTION_DELTA[direction]
     r, c = row + dr, col + dc
 
-    # 只要还在棋盘范围内（行/列都 >= 0）就继续检查
-    while r >= 0 and c >= 0:
+    # 同时判断上下界
+    while 0 <= r < rows and 0 <= c < cols:
         if (r, c) in arrows:
-            return False   # 前方有阻挡
+            return False
         r += dr
         c += dc
 
-    return True            # 前方畅通，可以飞出
+    return True
 
 def all_arrows_cleared(arrows):
     """棋盘上还有没有箭头？空字典表示全部清除"""

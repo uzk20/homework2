@@ -82,7 +82,7 @@ class Game:
         if (row, col) not in self.arrows:
             return
 
-        if can_fly(self.arrows, row, col):
+        if can_fly(self.arrows, row, col, GRID_SIZE, GRID_SIZE):
             direction = self.arrows.pop((row, col))
             self.animations.append([row, col, direction, 0])
         else:
