@@ -83,7 +83,8 @@ homework2/
 
 ### 通关 / 失败界面
 
-![结果界面](screenshots/result.png)
+![结果界面](screenshots/通关界面.png)
+![结果界面](screenshots/失败界面.png)
 
 ## 实现思路
 
